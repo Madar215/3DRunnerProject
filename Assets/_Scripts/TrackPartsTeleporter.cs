@@ -1,25 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class TrackPartsTeleporter : MonoBehaviour
+namespace _Scripts
 {
-    // Start is called before the first frame update
-    void Start()
+    public class TrackPartsTeleporter : MonoBehaviour
     {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        [SerializeField] private Vector3 teleportLocation = new Vector3(0f, -0.7f, 12.5f); 
         
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Finish")
+        private void OnTriggerEnter(Collider other)
         {
-            transform.position = new Vector3(0, -0.7f, 12.5f);
-            Debug.Log("AAAAAA");
+            if (!other.gameObject.CompareTag("Finish")) return;
+            other.transform.position = teleportLocation;
         }
     }
 }
