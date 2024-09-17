@@ -33,31 +33,6 @@ namespace _Scripts
                     break;
                 case TouchPhase.Moved:
                     _currentTouchPos = touch.position;
-
-                    /*if (_isSwiping)
-                    {
-                        float swipeDelta = _currentTouchPos.x - _startTouchPos.x;
-                        if (Mathf.Abs(swipeDelta) > swipeThreshold)
-                        {
-                            switch (swipeDelta)
-                            {
-                                case > 0:
-                                    Debug.Log(swipeDelta);
-                                    _playerMovement.MovePlayerRight();
-                                    break;
-                                case < 0:
-                                    Debug.Log(swipeDelta);
-                                    _playerMovement.MovePlayerLeft();
-                                    break;
-                            }
-                        }
-                        
-                        if (_currentTouchPos.y - _startTouchPos.y > swipeThreshold)
-                            _playerMovement.Jump();
-                        
-                        _startTouchPos = _currentTouchPos;
-                        _isSwiping = false;
-                    }*/
                     break;
                 case TouchPhase.Canceled:
                     _isSwiping = false;
@@ -71,11 +46,9 @@ namespace _Scripts
                             switch (swipeDelta)
                             {
                                 case > 0:
-                                    Debug.Log(swipeDelta);
                                     _playerMovement.MovePlayerRight();
                                     break;
                                 case < 0:
-                                    Debug.Log(swipeDelta);
                                     _playerMovement.MovePlayerLeft();
                                     break;
                             }
@@ -84,10 +57,8 @@ namespace _Scripts
                         if (_currentTouchPos.y - _startTouchPos.y > swipeThreshold)
                             _playerMovement.Jump();
                         
-                        _startTouchPos = _currentTouchPos;
                         _isSwiping = false;
                     }
-                    /*_isSwiping = false;*/
                     break;
             }
             
