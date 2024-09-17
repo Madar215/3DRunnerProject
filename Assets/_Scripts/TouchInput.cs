@@ -9,6 +9,8 @@ namespace _Scripts
 
         private bool _isSwiping;
 
+        [SerializeField] private float swipeThreshold = 50f;
+
         private PlayerMovement _playerMovement;
 
         private void Awake()
@@ -32,28 +34,60 @@ namespace _Scripts
                 case TouchPhase.Moved:
                     _currentTouchPos = touch.position;
 
-                    if (_isSwiping)
+                    /*if (_isSwiping)
                     {
-                        switch (_currentTouchPos.x - _startTouchPos.x)
+                        float swipeDelta = _currentTouchPos.x - _startTouchPos.x;
+                        if (Mathf.Abs(swipeDelta) > swipeThreshold)
                         {
-                            case > 1:
-                                _playerMovement.MovePlayerRight();
-                                break;
-                            case < -1:
-                                _playerMovement.MovePlayerLeft();
-                                break;
+                            switch (swipeDelta)
+                            {
+                                case > 0:
+                                    Debug.Log(swipeDelta);
+                                    _playerMovement.MovePlayerRight();
+                                    break;
+                                case < 0:
+                                    Debug.Log(swipeDelta);
+                                    _playerMovement.MovePlayerLeft();
+                                    break;
+                            }
                         }
                         
-                        if (_currentTouchPos.y - _startTouchPos.y > 1)
+                        if (_currentTouchPos.y - _startTouchPos.y > swipeThreshold)
+                            _playerMovement.Jump();
+                        
+                        _startTouchPos = _currentTouchPos;
+                        _isSwiping = false;
+                    }*/
+                    break;
+                case TouchPhase.Canceled:
+                    _isSwiping = false;
+                    break;
+                case TouchPhase.Ended:
+                    if (_isSwiping)
+                    {
+                        float swipeDelta = _currentTouchPos.x - _startTouchPos.x;
+                        if (Mathf.Abs(swipeDelta) > swipeThreshold)
+                        {
+                            switch (swipeDelta)
+                            {
+                                case > 0:
+                                    Debug.Log(swipeDelta);
+                                    _playerMovement.MovePlayerRight();
+                                    break;
+                                case < 0:
+                                    Debug.Log(swipeDelta);
+                                    _playerMovement.MovePlayerLeft();
+                                    break;
+                            }
+                        }
+                        
+                        if (_currentTouchPos.y - _startTouchPos.y > swipeThreshold)
                             _playerMovement.Jump();
                         
                         _startTouchPos = _currentTouchPos;
                         _isSwiping = false;
                     }
-                    break;
-                case TouchPhase.Canceled:
-                case TouchPhase.Ended:
-                    _isSwiping = false;
+                    /*_isSwiping = false;*/
                     break;
             }
             
