@@ -912,7 +912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9fe33415606d349adeeed6d4ab8e22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingSpeed: 10
+  movingSpeed: 15
   jumpingForce: 300
   rightLaneX: 1
   leftLaneX: -1

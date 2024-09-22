@@ -40,22 +40,29 @@ namespace _Scripts
                 case TouchPhase.Ended:
                     if (_isSwiping)
                     {
-                        float swipeDelta = _currentTouchPos.x - _startTouchPos.x;
-                        if (Mathf.Abs(swipeDelta) > swipeThreshold)
+                        float swipeDeltaX = _currentTouchPos.x - _startTouchPos.x;
+                        float swipeDeltaY = _currentTouchPos.y - _startTouchPos.y;
+                        
+                        if (Mathf.Abs(swipeDeltaX) > swipeDeltaY)
                         {
-                            switch (swipeDelta)
+                            if (Mathf.Abs(swipeDeltaX) > swipeThreshold)
                             {
-                                case > 0:
-                                    _playerMovement.MovePlayerRight();
-                                    break;
-                                case < 0:
-                                    _playerMovement.MovePlayerLeft();
-                                    break;
+                                switch (swipeDeltaX)
+                                {
+                                    case > 0:
+                                        _playerMovement.MovePlayerRight();
+                                        break;
+                                    case < 0:
+                                        _playerMovement.MovePlayerLeft();
+                                        break;
+                                }
                             }
                         }
-                        
-                        if (_currentTouchPos.y - _startTouchPos.y > swipeThreshold)
-                            _playerMovement.Jump();
+                        else
+                        {
+                            if (swipeDeltaY > swipeThreshold)
+                                _playerMovement.Jump();
+                        }
                         
                         _isSwiping = false;
                     }
