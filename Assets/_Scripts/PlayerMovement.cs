@@ -16,6 +16,7 @@ namespace _Scripts
         [Header("Ground")]
         [SerializeField] private LayerMask groundLayer;
         [SerializeField] private float groundCheckRadius = 2f;
+        [SerializeField] private float groundPosition = 0.5f;
 
         private Rigidbody _rb;
 
@@ -76,14 +77,14 @@ namespace _Scripts
 
         private bool GroundCheck()
         {
-            Vector3 pos = transform.position + (Vector3.down * 0.5f);
+            Vector3 pos = transform.position + (Vector3.down * groundPosition);
             return Physics.CheckSphere(pos, groundCheckRadius, groundLayer);
         }
 
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.red;
-            Vector3 pos = transform.position + (Vector3.down * 0.5f);
+            Vector3 pos = transform.position + (Vector3.down * groundPosition);
             Gizmos.DrawSphere(pos, groundCheckRadius);
         }
     }
