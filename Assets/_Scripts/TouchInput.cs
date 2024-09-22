@@ -15,7 +15,7 @@ namespace _Scripts
 
         private void Awake()
         {
-            _playerMovement = GetComponent<PlayerMovement>();
+            _playerMovement = GetComponentInParent<PlayerMovement>();
         }
 
         private void Update()
