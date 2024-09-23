@@ -190,6 +190,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &118063119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 118063120}
+  - component: {fileID: 118063121}
+  m_Layer: 0
+  m_Name: EnvironmentParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &118063120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118063119}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.042379, y: 1.4951397, z: 10.615841}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &118063121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118063119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52e0526e073fae74995347de7713ea77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackSpeed: 6
 --- !u!1 &165686338
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,6 +589,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1942022338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &698343389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 698343390}
+  - component: {fileID: 698343391}
+  m_Layer: 0
+  m_Name: RoadParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &698343390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698343389}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.042379, y: 1.4951397, z: 10.615841}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &698343391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698343389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52e0526e073fae74995347de7713ea77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackSpeed: 6
 --- !u!1 &856557223
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 856557226}
   - component: {fileID: 856557225}
+  - component: {fileID: 856557227}
   m_Layer: 0
   m_Name: PoolManager
   m_TagString: Untagged
@@ -591,9 +682,28 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1730358589}
+  - {fileID: 1779546381}
   - {fileID: 1126544347}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &856557227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856557223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c901629c5940044a0570af65bb3fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolDefaultSize: 5
+  poolMaxSize: 10
+  treeObject: {fileID: 9046459175022132154, guid: 080d41f10ec21f749bcb12b311f3cd2a,
+    type: 3}
+  rockObject: {fileID: 3541043836736335406, guid: 899d712be47aa2f43bd743bc9c1bc72e,
+    type: 3}
 --- !u!1 &875282660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1163,7 +1273,7 @@ GameObject:
   - component: {fileID: 1126544349}
   - component: {fileID: 1126544348}
   m_Layer: 0
-  m_Name: RoadDestroyer
+  m_Name: ObjectDestroyer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1196,7 +1306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d181c51f37d2b478b1c814a4a58818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolSpawner: {fileID: 1730358590}
+  roadPoolSpawner: {fileID: 1730358590}
+  environmentPoolSpawner: {fileID: 1779546382}
 --- !u!54 &1126544349
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1243,7 +1354,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 0.75, z: 1}
+  m_Size: {x: 15, y: 0.75, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1168573131 stripped
 GameObject:
@@ -1474,7 +1585,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5bce1179f0baf6c489c0cb00b345f177, type: 2}
+  - {fileID: 2100000, guid: 49f2ecb08a0c38140b335a0a1f7f66f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1873,6 +1984,61 @@ MonoBehaviour:
   numActiveRoad: 15
   roadLength: 4
   roadPosOffset: 0.95
+  roadParentTransform: {fileID: 698343390}
+--- !u!1 &1779546380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1779546381}
+  - component: {fileID: 1779546382}
+  m_Layer: 0
+  m_Name: EnvironmentCreator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1779546381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779546380}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 856557226}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1779546382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779546380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d2de077f1e8b684e93f0798b7505b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numActiveEnvironmentObject: 15
+  initialTree: 5
+  initialRock: 5
+  parentTransform: {fileID: 118063120}
+  positiveMinX: 4
+  positiveMaxX: 6
+  negativeMinX: -4
+  negativeMaxX: -6
+  positiveMinZ: 7
+  positiveMaxZ: 45
 --- !u!1 &1822958904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1961,3 +2127,5 @@ SceneRoots:
   - {fileID: 1554421806}
   - {fileID: 106394674}
   - {fileID: 1435568878}
+  - {fileID: 118063120}
+  - {fileID: 698343390}

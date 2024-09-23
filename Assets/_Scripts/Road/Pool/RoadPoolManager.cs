@@ -3,7 +3,7 @@ using UnityEngine.Pool;
 
 namespace _Scripts.Road.Pool
 {
-    public class PoolManager : MonoBehaviour
+    public class RoadPoolManager : MonoBehaviour
     {
         public int poolDefaultSize = 5;
         public int poolMaxSize = 10;
@@ -19,7 +19,7 @@ namespace _Scripts.Road.Pool
                 OnTakeFromPool,
                 OnReturnedToPool,
                 OnDestroyObject,
-                true,
+                false,
                 poolDefaultSize,
                 poolMaxSize
                 );
