@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace _Scripts
+namespace _Scripts.Road.Pool
 {
     public class PoolManager : MonoBehaviour
     {
