@@ -8,6 +8,7 @@ TagManager:
   - Rock
   - Building
   - Road
+  - Section
   layers:
   - Default
   - TransparentFX
