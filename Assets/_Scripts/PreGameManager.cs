@@ -54,6 +54,7 @@ namespace _Scripts
                 buttonsButton.image.color = Color.white;
             
             _isTouch = true;
+            _isButtons = false;
             _controlChoose = true;
             touchButton.image.color = Color.green;
         }
@@ -62,8 +63,9 @@ namespace _Scripts
         {
             if(touchButton.image.color == Color.green)
                 touchButton.image.color = Color.white;
-
+            
             _isButtons = true;
+            _isTouch = false;
             _controlChoose = true;
             buttonsButton.image.color = Color.green;
         }
@@ -77,7 +79,16 @@ namespace _Scripts
 
         public void PlayGame()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+            
+            if (_isTouch)
+            {
+                SaveSystem.SavePlayerData(new PlayerData(nameInput.text, 0, ControlSchemeE.Touch));
+            }
+            else if (_isButtons)
+            {
+                SaveSystem.SavePlayerData(new PlayerData(nameInput.text, 0, ControlSchemeE.Button));
+            }
         }
     }
 }
