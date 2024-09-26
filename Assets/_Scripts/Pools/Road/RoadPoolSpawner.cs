@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace _Scripts.Road.Pool
+namespace _Scripts.Pools.Road
 {
     public class RoadPoolSpawner : MonoBehaviour
     {

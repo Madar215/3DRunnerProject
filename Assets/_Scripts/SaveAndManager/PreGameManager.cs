@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace _Scripts
+namespace _Scripts.SaveAndManager
 {
     public class PreGameManager : MonoBehaviour
     {

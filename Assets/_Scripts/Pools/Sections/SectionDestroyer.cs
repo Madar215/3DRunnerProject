@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Scripts
+namespace _Scripts.Pools.Sections
 {
     public class SectionDestroyer : MonoBehaviour
     {

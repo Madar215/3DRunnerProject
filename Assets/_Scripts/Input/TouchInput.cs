@@ -1,6 +1,7 @@
+using _Scripts.Player;
 using UnityEngine;
 
-namespace _Scripts
+namespace _Scripts.Input
 {
     public class TouchInput : MonoBehaviour
     {
@@ -20,10 +21,10 @@ namespace _Scripts
 
         private void Update()
         {
-            if(Input.touchCount == 0)
+            if(UnityEngine.Input.touchCount == 0)
                 return;
             
-            Touch touch = Input.GetTouch(0);
+            Touch touch = UnityEngine.Input.GetTouch(0);
 
             switch (touch.phase)
             {

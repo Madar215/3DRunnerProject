@@ -1,6 +1,8 @@
+using _Scripts.Pools.Obstacles;
+using _Scripts.Pools.Road;
 using UnityEngine;
 
-namespace _Scripts.Road.Pool
+namespace _Scripts.Pools
 {
     public class ObjectPoolDestroyer : MonoBehaviour
     {
