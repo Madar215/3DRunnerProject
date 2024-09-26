@@ -4,7 +4,12 @@ namespace _Scripts.SaveAndManager
     [System.Serializable]
     public class LeaderboardData
     {
-        public string[] name = new string[10];
-        public int[] score = new int[10];
+        public Data[] Datas = new Data[10];
+        
+        public struct Data
+        {
+            public string Name;
+            public int Score;
+        }
     }
 }

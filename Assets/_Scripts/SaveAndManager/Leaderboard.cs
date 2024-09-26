@@ -43,8 +43,8 @@ namespace _Scripts.SaveAndManager
                 };
 
                 score.Find("Pos").GetComponent<TMP_Text>().text = rankString;
-                score.Find("Name").GetComponent<TMP_Text>().text = _leaderboardData.name[i];
-                score.Find("Score").GetComponent<TMP_Text>().text = _leaderboardData.score[i].ToString();
+                score.Find("Name").GetComponent<TMP_Text>().text = _leaderboardData.Datas[i].Name;
+                score.Find("Score").GetComponent<TMP_Text>().text = _leaderboardData.Datas[i].Score.ToString();
             }
         }
     }

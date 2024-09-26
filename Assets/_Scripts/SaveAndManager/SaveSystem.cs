@@ -31,7 +31,7 @@ namespace _Scripts.SaveAndManager
 
         public static LeaderboardData LoadLeaderboardData()
         {
-            if (!File.Exists(_pathLeaderboard)) return new LeaderboardData(); // might change in the future !!!
+            if (!File.Exists(_pathLeaderboard)) return new LeaderboardData();
 
             string json = File.ReadAllText(_pathLeaderboard);
             LeaderboardData leaderboardData = JsonUtility.FromJson<LeaderboardData>(json);
