@@ -17,7 +17,7 @@ namespace _Scripts.SaveAndManager
     
     public enum ControlSchemeE
     {
-        Button,
         Touch,
+        Button,
     }
 }
