@@ -28,7 +28,13 @@ namespace _Scripts.Pools.Sections
 
         private void Start()
         {
-            for (int i = 0; i < maxActiveSections; i++)
+            // activate the first section which is a shot one for the start of the game.
+            _section = _sectionPool[0];
+            _section.SetActive(true);
+            _activeSections.Add(_section);
+            _section.transform.position = new Vector3(0f, 0f, 22f);
+            
+            for (int i = 1; i < maxActiveSections - 1; i++)
             {
                 // get random section, active it, add it to active section list and position it.
                 _section = GetRandomSectionFromPool();
@@ -42,11 +48,13 @@ namespace _Scripts.Pools.Sections
         {
             if (_activeSections.Count == maxActiveSections) return;
             
-            // get random section, active it, add it to active section list and position it.
+            // calculate the last section's position, get random section, active it,
+            //  add it to the active section list and position it.
+            var lastSectionPosZ = _section.transform.position.z;
             _section = GetRandomSectionFromPool();
             _section.SetActive(true);
             _activeSections.Add(_section);
-            _section.transform.position = new Vector3(0f, 0f, 122f);
+            _section.transform.position = new Vector3(0f, 0f, lastSectionPosZ + 50);
         }
 
         private GameObject GetRandomSectionFromPool()
