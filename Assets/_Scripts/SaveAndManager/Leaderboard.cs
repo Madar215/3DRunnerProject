@@ -15,16 +15,12 @@ namespace _Scripts.SaveAndManager
         private void Awake()
         {
             _leaderboardData = SaveSystem.LoadLeaderboardData();
+            ArrangeLeaderboard();
             _scoreContainer = GetComponent<Transform>();
             scoreTemplate.gameObject.SetActive(false);
         }
 
-        private void Start()
-        {
-            ShowLeaderboard();
-        }
-
-        private void ShowLeaderboard()
+        public void ShowLeaderboard()
         {
             for (int i = 0; i < 10; i++)
             {
@@ -46,6 +42,46 @@ namespace _Scripts.SaveAndManager
                 score.Find("Name").GetComponent<TMP_Text>().text = _leaderboardData.Datas[i].Name;
                 score.Find("Score").GetComponent<TMP_Text>().text = _leaderboardData.Datas[i].Score.ToString();
             }
+        }
+
+        private void ArrangeLeaderboard()
+        {
+            int n = _leaderboardData.Datas.Length;
+            for (int i = 0; i < n - 1; i++)
+            {
+                int min = i;
+
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (_leaderboardData.Datas[j].Score < _leaderboardData.Datas[min].Score)
+                    {
+                        min = j;
+                    }
+                }
+                
+                // if smaller score found, swap them.
+                if (min != i)
+                {
+                    // swap
+                    (_leaderboardData.Datas[i].Score, _leaderboardData.Datas[min].Score) = (_leaderboardData.Datas[min].Score, _leaderboardData.Datas[i].Score);
+                }
+            }
+        }
+
+        public static bool SubmitScore(PlayerData playerData)
+        {
+            int loopSize = _leaderboardData.Datas.Length;
+            for (int i = 0; i < loopSize; i++)
+            {
+                if (playerData.Score <= _leaderboardData.Datas[i].Score) continue;
+                
+                _leaderboardData.Datas[i].Score = playerData.Score;
+                _leaderboardData.Datas[i].Name = playerData.Name;
+                SaveSystem.SaveLeaderboardData(_leaderboardData);
+                return true;
+            }
+
+            return false;
         }
     }
 }

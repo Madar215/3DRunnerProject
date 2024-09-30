@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _Scripts.SaveAndManager
 {
@@ -18,6 +19,11 @@ namespace _Scripts.SaveAndManager
         [Header("Score")]
         [SerializeField] private float pointsPerSec = 10f;
         [SerializeField] private TMP_Text scoreText;
+        
+        [Header("UI")]
+        [SerializeField] private TMP_Text submitText;
+        [SerializeField] private TMP_Text gameOverScoreText;
+        [SerializeField] private GameObject gameOverUi;
 
         private void Awake()
         {
@@ -58,6 +64,38 @@ namespace _Scripts.SaveAndManager
             Time.timeScale = 1f;
             
             _inputArray[_controlScheme].SetActive(true);
+        }
+
+        public void SubmitScore()
+        {
+            bool submit = Leaderboard.SubmitScore(_playerData);
+            submitText.gameObject.SetActive(true);
+
+            submitText.text = submit ? "Score was submitted" : "Your score is not high enough";
+        }
+
+        public void RetryGame()
+        {
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 1f;
+        }
+
+        public void ReturnToMainMenu()
+        {
+            // Main menu is in build index = 0.
+            SceneManager.LoadSceneAsync(0);
+            Time.timeScale = 1f;
+        }
+
+        public void TriggerLose()
+        {
+            PauseGame();
+
+            _playerData.Score = (int)_score;
+
+            gameOverUi.SetActive(true);
+
+            gameOverScoreText.text = scoreText.text;
         }
     }
 }
