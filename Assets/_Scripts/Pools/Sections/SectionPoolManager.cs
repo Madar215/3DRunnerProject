@@ -28,7 +28,7 @@ namespace _Scripts.Pools.Sections
 
         private void Start()
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < maxActiveSections; i++)
             {
                 // get random section, active it, add it to active section list and position it.
                 _section = GetRandomSectionFromPool();
@@ -46,10 +46,10 @@ namespace _Scripts.Pools.Sections
             _section = GetRandomSectionFromPool();
             _section.SetActive(true);
             _activeSections.Add(_section);
-            _section.transform.position = new Vector3(0f, 0f, 72f);
+            _section.transform.position = new Vector3(0f, 0f, 122f);
         }
 
-        public GameObject GetRandomSectionFromPool()
+        private GameObject GetRandomSectionFromPool()
         {
             int randomIndex;
 
