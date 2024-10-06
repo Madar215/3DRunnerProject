@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace _Scripts.SaveAndManager
+namespace SaveAndManager
 {
     public class GameplayManager : MonoBehaviour
     {

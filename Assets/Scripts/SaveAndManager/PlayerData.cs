@@ -1,5 +1,5 @@
 
-namespace _Scripts.SaveAndManager
+namespace SaveAndManager
 {
     public class PlayerData
     {

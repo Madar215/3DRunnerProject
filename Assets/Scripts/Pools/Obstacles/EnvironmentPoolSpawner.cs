@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace _Scripts.Pools.Obstacles
+namespace Pools.Obstacles
 {
     public class EnvironmentPoolSpawner : MonoBehaviour
     {

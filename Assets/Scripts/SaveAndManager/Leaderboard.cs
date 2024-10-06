@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace _Scripts.SaveAndManager
+namespace SaveAndManager
 {
     public class Leaderboard : MonoBehaviour
     {

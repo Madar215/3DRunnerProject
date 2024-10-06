@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Scripts.Pools.Road
+namespace Pools.Road
 {
     public class MovingTrack : MonoBehaviour
     {

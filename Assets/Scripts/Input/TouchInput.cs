@@ -1,7 +1,7 @@
-using _Scripts.Player;
+using Player;
 using UnityEngine;
 
-namespace _Scripts.Input
+namespace Input
 {
     public class TouchInput : MonoBehaviour
     {

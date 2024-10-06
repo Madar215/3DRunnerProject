@@ -1,7 +1,7 @@
 using System.IO;
 using UnityEngine;
 
-namespace _Scripts.SaveAndManager
+namespace SaveAndManager
 {
     [System.Serializable]
     public static class SaveSystem

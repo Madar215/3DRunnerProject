@@ -1,7 +1,7 @@
-using _Scripts.SaveAndManager;
+using SaveAndManager;
 using UnityEngine;
 
-namespace _Scripts.Player
+namespace Player
 {
     public class PlayerHitBox : MonoBehaviour
     {
