@@ -715,7 +715,7 @@ PrefabInstance:
     - target: {fileID: 3501575503789646232, guid: 84062c9556b3cef4f8aa9a210cba155b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.958
+      value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 3501575503789646232, guid: 84062c9556b3cef4f8aa9a210cba155b,
         type: 3}
@@ -770,7 +770,7 @@ PrefabInstance:
     - target: {fileID: 8218614696633310213, guid: 84062c9556b3cef4f8aa9a210cba155b,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -856,7 +856,7 @@ PrefabInstance:
     - target: {fileID: 682651933695003148, guid: 66498b191d3c64e4ea56d4ed50eabbbd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.88
+      value: 1.4299998
       objectReference: {fileID: 0}
     - target: {fileID: 682651933695003148, guid: 66498b191d3c64e4ea56d4ed50eabbbd,
         type: 3}
@@ -897,6 +897,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367835598604393105, guid: 66498b191d3c64e4ea56d4ed50eabbbd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1728,7 +1733,7 @@ PrefabInstance:
     - target: {fileID: 3501575503789646232, guid: 84062c9556b3cef4f8aa9a210cba155b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.958
+      value: 1.42
       objectReference: {fileID: 0}
     - target: {fileID: 3501575503789646232, guid: 84062c9556b3cef4f8aa9a210cba155b,
         type: 3}
@@ -1783,7 +1788,7 @@ PrefabInstance:
     - target: {fileID: 8218614696633310213, guid: 84062c9556b3cef4f8aa9a210cba155b,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1958,7 +1963,7 @@ PrefabInstance:
     - target: {fileID: 682651933695003148, guid: 66498b191d3c64e4ea56d4ed50eabbbd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.88
+      value: 1.43
       objectReference: {fileID: 0}
     - target: {fileID: 682651933695003148, guid: 66498b191d3c64e4ea56d4ed50eabbbd,
         type: 3}
@@ -1999,6 +2004,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367835598604393105, guid: 66498b191d3c64e4ea56d4ed50eabbbd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3452,7 +3462,7 @@ PrefabInstance:
     - target: {fileID: 682651933695003148, guid: 66498b191d3c64e4ea56d4ed50eabbbd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.88
+      value: 1.4299998
       objectReference: {fileID: 0}
     - target: {fileID: 682651933695003148, guid: 66498b191d3c64e4ea56d4ed50eabbbd,
         type: 3}
@@ -3493,6 +3503,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2367835598604393105, guid: 66498b191d3c64e4ea56d4ed50eabbbd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
