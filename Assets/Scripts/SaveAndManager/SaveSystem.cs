@@ -1,5 +1,6 @@
 using System.IO;
 using UnityEngine;
+using Newtonsoft.Json;
 
 namespace SaveAndManager
 {
@@ -25,7 +26,11 @@ namespace SaveAndManager
 
         public static void SaveLeaderboardData(LeaderboardData leaderboardData)
         {
-            string json = JsonUtility.ToJson(leaderboardData);
+            /*string json = JsonUtility.ToJson(leaderboardData);
+            File.WriteAllText(_pathLeaderboard, json);*/
+            
+            string json = JsonConvert.SerializeObject(leaderboardData, Formatting.Indented);
+            
             File.WriteAllText(_pathLeaderboard, json);
         }
 
@@ -33,9 +38,15 @@ namespace SaveAndManager
         {
             if (!File.Exists(_pathLeaderboard)) return new LeaderboardData();
 
+            /*
             string json = File.ReadAllText(_pathLeaderboard);
             LeaderboardData leaderboardData = JsonUtility.FromJson<LeaderboardData>(json);
-            return leaderboardData;
+            return leaderboardData;*/
+            
+            string jsonFromFile = File.ReadAllText(_pathLeaderboard);
+            
+            LeaderboardData loadedData = JsonConvert.DeserializeObject<LeaderboardData>(jsonFromFile);
+            return loadedData;
         }
     }
 }

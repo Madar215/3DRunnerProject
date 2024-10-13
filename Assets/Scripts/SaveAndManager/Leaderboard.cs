@@ -49,21 +49,21 @@ namespace SaveAndManager
             int n = _leaderboardData.Datas.Length;
             for (int i = 0; i < n - 1; i++)
             {
-                int min = i;
+                int max = i;
 
                 for (int j = i + 1; j < n; j++)
                 {
-                    if (_leaderboardData.Datas[j].Score < _leaderboardData.Datas[min].Score)
+                    if (_leaderboardData.Datas[j].Score > _leaderboardData.Datas[max].Score)
                     {
-                        min = j;
+                        max = j;
                     }
                 }
                 
                 // if smaller score found, swap them.
-                if (min != i)
+                if (max != i)
                 {
                     // swap
-                    (_leaderboardData.Datas[i].Score, _leaderboardData.Datas[min].Score) = (_leaderboardData.Datas[min].Score, _leaderboardData.Datas[i].Score);
+                    (_leaderboardData.Datas[i].Score, _leaderboardData.Datas[max].Score) = (_leaderboardData.Datas[max].Score, _leaderboardData.Datas[i].Score);
                 }
             }
         }
@@ -75,6 +75,8 @@ namespace SaveAndManager
             {
                 if (playerData.Score <= _leaderboardData.Datas[i].Score) continue;
                 
+                PushScores(i);
+                
                 _leaderboardData.Datas[i].Score = playerData.Score;
                 _leaderboardData.Datas[i].Name = playerData.Name;
                 SaveSystem.SaveLeaderboardData(_leaderboardData);
@@ -82,6 +84,16 @@ namespace SaveAndManager
             }
 
             return false;
+        }
+
+        private static void PushScores(int n)
+        {
+            int loopSize = _leaderboardData.Datas.Length;
+            for (int i = loopSize - 1; i > n; i--)
+            {
+                _leaderboardData.Datas[i].Score = _leaderboardData.Datas[i - 1].Score;
+                _leaderboardData.Datas[i].Name = _leaderboardData.Datas[i - 1].Name;
+            }
         }
     }
 }
