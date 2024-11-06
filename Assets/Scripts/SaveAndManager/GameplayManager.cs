@@ -1,4 +1,5 @@
 using System;
+using Pools.Road;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,7 @@ namespace SaveAndManager
         private PlayerData _playerData;
         private static int _controlScheme;
         private float _score;
+        private float _timeSinceLastInc;
         
         [Header("Input")]
         [SerializeField] private GameObject touchInput;
@@ -19,6 +21,8 @@ namespace SaveAndManager
         [Header("Score")]
         [SerializeField] private float pointsPerSec = 10f;
         [SerializeField] private TMP_Text scoreText;
+        [SerializeField] private float scoreMultiplier = 1f;
+        [SerializeField] private float scoreIncreaseInterval = 10f;
         
         [Header("UI")]
         [SerializeField] private TMP_Text submitText;
@@ -27,6 +31,7 @@ namespace SaveAndManager
 
         [Header("Managers")]
         [SerializeField] private AudioManager audioManager;
+        [SerializeField] private MovingTrack movingTrack;
 
         private void Awake()
         {
@@ -42,11 +47,30 @@ namespace SaveAndManager
         {
             // active the player input preference based on the control scheme
             _inputArray[_controlScheme].SetActive(true);
+            
+            // Set track speed to base speed
+            movingTrack.ResetSpeed();
         }
 
         private void Update()
         {
-            _score += pointsPerSec * Time.deltaTime;
+            _timeSinceLastInc += Time.deltaTime;
+            
+            if (_timeSinceLastInc < scoreIncreaseInterval) return;
+            
+            // Add to the score multiplier
+            scoreMultiplier += 0.2f;
+            
+            // Increase track speed
+            movingTrack.IncreaseSpeed();
+            
+            // Reset the timer
+            _timeSinceLastInc = 0f;
+        }
+
+        private void LateUpdate()
+        {
+            _score += pointsPerSec * Time.deltaTime * scoreMultiplier;
             scoreText.text = RoundFloat(_score).ToString();
         }
 

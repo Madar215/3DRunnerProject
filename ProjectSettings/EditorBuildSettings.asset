@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GalBranch.unity
     guid: 4911d35f0debebe488ab4d69df02533f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleSceneMain.unity
     guid: 4c2a11b6d0c812f43bb58453c58684e7
   m_configObjects: {}

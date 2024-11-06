@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e0526e073fae74995347de7713ea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackSpeed: 6
+  baseSpeed: 8
 --- !u!1 &126184392
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,10 +1162,13 @@ MonoBehaviour:
   buttonsInput: {fileID: 1067648487}
   pointsPerSec: 50
   scoreText: {fileID: 578829963}
+  scoreMultiplier: 1
+  scoreIncreaseInterval: 10
   submitText: {fileID: 1303500879}
   gameOverScoreText: {fileID: 910421862}
   gameOverUi: {fileID: 1036838127}
   audioManager: {fileID: 1168797523}
+  movingTrack: {fileID: 1991370776}
 --- !u!1 &578829962
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,7 +1604,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5676,7 +5679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52e0526e073fae74995347de7713ea77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackSpeed: 8
+  baseSpeed: 8
 --- !u!4 &1991370777
 Transform:
   m_ObjectHideFlags: 0
