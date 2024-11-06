@@ -25,6 +25,9 @@ namespace SaveAndManager
         [SerializeField] private TMP_Text gameOverScoreText;
         [SerializeField] private GameObject gameOverUi;
 
+        [Header("Managers")]
+        [SerializeField] private AudioManager audioManager;
+
         private void Awake()
         {
             // load player data from main menu
